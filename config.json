@@ -1,0 +1,27 @@
+{
+  "enabled": false,
+  "engine": "edge",
+  "ttsVoice": "zh-CN-XiaoxiaoNeural",
+  "ttsRate": "+0%",
+  "ttsPitch": "+0Hz",
+  "maxTextLength": 300,
+  "dsVoice": "mira",
+  "dsMaxChars": 200,
+  "dsTimeoutMs": 60000,
+  "dsSessionId": "",
+  "dsCdpUrl": "http://127.0.0.1:9222",
+  "sttModel": "small",
+  "sttLanguage": "zh",
+  "autoTranscribe": true,
+  "scopes": {},
+  "dsUseBrowser": false,
+  "dsDeliverMode": "node",
+  "dsPagePort": 9461,
+  "dsProfileDir": "",
+  "mm": {
+    "apiKey": "",
+    "voiceId": "",
+    "model": "speech-02-hd",
+    "speed": 1
+  }
+}
