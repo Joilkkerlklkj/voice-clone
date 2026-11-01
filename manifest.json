@@ -1,0 +1,77 @@
+{
+  "id": "voice-clone",
+  "name": "声音·克隆版",
+  "version": "1.0.0",
+  "apiVersion": 1,
+  "description": "三引擎语音插件：edge（微软音色，免费）/ deepseek（官方朗读音色）/ minimax（用你自己的录音克隆音色）。可发语音气泡，也能把群友语音转文字。",
+  "author": "DSH",
+  "entry": "index.js",
+  "priority": 65,
+  "defaultEnabled": false,
+  "hooks": [
+    "prefilter"
+  ],
+  "tools": true,
+  "config": {
+    "enabled": false,
+    "engine": "edge",
+    "ttsVoice": "zh-CN-XiaoxiaoNeural",
+    "ttsRate": "+0%",
+    "ttsPitch": "+0Hz",
+    "maxTextLength": 300,
+    "dsVoice": "mira",
+    "dsMaxChars": 200,
+    "dsTimeoutMs": 60000,
+    "dsSessionId": "",
+    "dsCdpUrl": "http://127.0.0.1:9222",
+    "sttModel": "small",
+    "sttLanguage": "zh",
+    "autoTranscribe": true,
+    "scopes": {},
+    "dsUseBrowser": false,
+    "dsDeliverMode": "node",
+    "dsPagePort": 9461,
+    "dsProfileDir": "",
+    "mm": {
+      "apiKey": "",
+      "voiceId": "",
+      "model": "speech-02-hd",
+      "speed": 1
+    }
+  },
+  "permissions": [
+    "send",
+    "read-media",
+    "exec"
+  ],
+  "scopes": [
+    "all"
+  ],
+  "deps": {
+    "npmNote": "ws 由内核 package.json 提供（^8.18.0），插件不单独安装",
+    "pipOptional": [
+      "edge-tts",
+      "faster-whisper",
+      "av<13"
+    ],
+    "system": [
+      "ffmpeg"
+    ],
+    "bundled": [
+      "assets/deepseek-hash.wasm"
+    ]
+  },
+  "setup": "voice 插件依赖分三层，执行 `bash plugins/voice/setup.sh` 自检：\n\n【第一层】主链路（DeepSeek 音色）——必需，零 Python\n  · Node ≥18 + 内核的 ws + assets/deepseek-hash.wasm（随包）+ ffmpeg\n  · 这一层齐了就能朗读/唱歌\n\n【第二层】edge 引擎（可选）\n  python3 -m venv plugins/voice/.venv\n  plugins/voice/.venv/bin/pip install edge-tts\n  ⚠️ 需要 Python ≥ 3.8\n\n【第三层】语音识别 hear_voice（可选）\n  plugins/voice/.venv/bin/pip install faster-whisper \"av<13\"\n  🔴 av 必须 <13：faster-whisper 调 av.open(metadata_errors=...)，\n     该参数在 av>=13 已移除，装了会直接 TypeError。\n\n一键：bash plugins/voice/setup.sh --install\n\n⚠️ .venv 不随插件包分发（364MB、aarch64 的 .so、写死绝对路径），\n   跨机器必坏。每台机器各自建本地 venv。详见 ENV.md。",
+  "category": "能力",
+  "summary": "发语音、听语音，还能用你的声音说话",
+  "uiTab": {
+    "id": "voice",
+    "label": "语音",
+    "inline": true
+  },
+  "ui": "ui.js",
+  "license": "MIT",
+  "contact": {
+    "qq": "3170037984"
+  }
+}
