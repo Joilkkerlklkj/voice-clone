@@ -1,5 +1,12 @@
 # 声音·克隆版（voice-clone）
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/github/v/release/Joilkkerlklkj/voice-clone?label=version)](https://github.com/Joilkkerlklkj/voice-clone/releases)
+[![Node](https://img.shields.io/badge/node-%E2%89%A518-brightgreen)](https://nodejs.org)
+[![Platform](https://img.shields.io/badge/platform-BG--QQagent%20%7C%20OneBot-blue)](https://github.com/lyyde599/BG-QQagent-v3.0)
+[![Downloads](https://img.shields.io/github/downloads/Joilkkerlklkj/voice-clone/total)](https://github.com/Joilkkerlklkj/voice-clone/releases)
+
+
 > 给「鲸界Bridge」QQ 机器人用的语音插件：**会发语音、听得懂语音，还能用你自己的声音说话**。
 > 版本 **v1.0.0** ｜ 作者 **DSH** ｜ MIT
 
