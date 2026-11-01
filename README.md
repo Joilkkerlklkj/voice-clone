@@ -199,3 +199,9 @@ voice-clone/
 ├── assets/            wasm 等随包资源
 └── ENV.md             环境说明
 ```
+
+---
+
+## 相关文档
+
+- [关闭 SnowLuma 内置 `#sl` 状态命令](docs/snowluma-status-command.md) —— 解决「发 #sl 机器人没反应 / 被协议端抢答」的问题
